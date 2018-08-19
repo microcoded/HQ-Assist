@@ -195,15 +195,17 @@ async def botinfo(ctx):
 async def nextshow(ctx):
     search = requests.get('https://api-quiz.hype.space/shows/now', headers = headers)
     data = search.json()
-    livecheck = data["active"]
-    if livecheck == "true":
+    livecheck = str(data["active"])
+    print(livecheck)
+    prize = data["nextShowPrize"]
+    if str(livecheck) == "True":
         finaltime = "**Live Now :movie_camera:**"
     else:
         time = data["nextShowTime"]
         prize = data["nextShowPrize"]
         showtime = datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S.%fZ')
         # you gotta somehow reformat the time above to the one below - gtg
-       # showtime = datetime.datetime.strptime(time, '%I:%M %p')
+        # showtime = str(datetime.datetime.strptime(time, '%I:%M %p'))
         #back to math we go then?
         showlist = list(str(showtime))
         time = "".join(showlist[11:13])
@@ -233,7 +235,8 @@ async def nextshow(ctx):
     ussearch = requests.get('https://api-quiz.hype.space/shows/now', headers = USheaders)
     usdata = ussearch.json()
     uslivecheck = usdata["active"]
-    if uslivecheck == "true":
+    usprize = usdata["nextShowPrize"]
+    if str(uslivecheck) == "True":
         usfinaltime = "**Live Now :movie_camera:**"
     else:
         usustime = usdata["nextShowTime"]
@@ -264,7 +267,8 @@ async def nextshow(ctx):
     desearch = requests.get('https://api-quiz.hype.space/shows/now', headers = DEheaders)
     dedata = desearch.json()
     delivecheck = dedata["active"]
-    if delivecheck == "true":
+    deprize = dedata["nextShowPrize"]
+    if str(delivecheck) == "True":
         definaltime = "**Live Now :movie_camera:**"
     else:
         deustime = dedata["nextShowTime"]
@@ -295,7 +299,8 @@ async def nextshow(ctx):
     uksearch = requests.get('https://api-quiz.hype.space/shows/now', headers = UKheaders)
     ukdata = uksearch.json()
     uklivecheck = ukdata["active"]
-    if uklivecheck == "true":
+    ukprize = ukdata["nextShowPrize"]
+    if str(uklivecheck) == "True":
         ukfinaltime = "**Live Now :movie_camera:**"
     else:
         ukustime = ukdata["nextShowTime"]
@@ -323,13 +328,12 @@ async def nextshow(ctx):
 
 
     embed = discord.Embed(title="HQ Schedule", description="Next Show Times:", color=0x7647a2)
-    embed.add_field(name="HQ AU :flag_au:", value="{} Prize: {}".format(finaltime, prize), inline=False)
-    embed.add_field(name="HQ US :flag_us:", value="{} Prize: {}".format(usfinaltime, usprize), inline=False)
-    embed.add_field(name="HQ DE :flag_de:", value="{} Prize: {}".format(definaltime, deprize), inline=False)
-    embed.add_field(name="HQ UK :flag_gb:", value="{} Prize: {}".format(ukfinaltime, ukprize), inline=False)
+    embed.add_field(name="HQ AU :flag_au:", value="{}, Prize: {}".format(finaltime, prize), inline=False)
+    embed.add_field(name="HQ US :flag_us:", value="{}, Prize: {}".format(usfinaltime, usprize), inline=False)
+    embed.add_field(name="HQ DE :flag_de:", value="{}, Prize: {}".format(definaltime, deprize), inline=False)
+    embed.add_field(name="HQ UK :flag_gb:", value="{}, Prize: {}".format(ukfinaltime, ukprize), inline=False)
     await bot.say(embed=embed)
 
 bot.loop.create_task(list_servers())
 
 bot.run("NDczMDI4MDAyNjI0NTY5MzQ0.Dj861A.qZGjZinhZOwo4xfnNHH4B1iiFyI")
-
