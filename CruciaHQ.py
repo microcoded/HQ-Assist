@@ -15,6 +15,7 @@ USheaders = {'Authorization':'Bearer [insert_us_bearer]'}
 DEheaders = {'Authorization' : 'Bearer [insert_de_bearer]'}
 UKheaders = {'Authorization' : 'Bearer [insert_uk_bearer]'}
 
+try: #error handling
 @bot.event
 async def on_ready():
     await bot.change_presence(game=discord.Game(name="!help"), status=discord.Status("dnd")) 
@@ -337,3 +338,6 @@ async def nextshow(ctx):
 bot.loop.create_task(list_servers())
 
 bot.run("NDczMDI4MDAyNjI0NTY5MzQ0.Dj861A.qZGjZinhZOwo4xfnNHH4B1iiFyI")
+
+except:
+    pass
