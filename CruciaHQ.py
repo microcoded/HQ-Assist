@@ -16,9 +16,9 @@ DEheaders = {'Authorization' : 'Bearer [insert_de_bearer]'}
 UKheaders = {'Authorization' : 'Bearer [insert_uk_bearer]'}
 
 try: #error handling
-@bot.event
-async def on_ready():
-    await bot.change_presence(game=discord.Game(name="!help"), status=discord.Status("dnd")) 
+    @bot.event
+    async def on_ready():
+     await bot.change_presence(game=discord.Game(name="!help"), status=discord.Status("dnd")) 
 
 
 
