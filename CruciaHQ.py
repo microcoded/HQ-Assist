@@ -216,7 +216,7 @@ try: #error handling
         # AU MANUAL TIME CONVERSION
         #
             if inttime < 13 and inttime > 2:
-            autime = inttime - 2
+                autime = inttime - 2
                 finaltime = str(autime) + minutes + "pm AEST"
             elif inttime > 14 and inttime < 24:
                 autime = inttime - 14
