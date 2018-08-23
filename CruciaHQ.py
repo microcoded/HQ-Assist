@@ -25,7 +25,7 @@ try: #error handling
 
     async def list_servers():
      await bot.wait_until_ready()
-        while not bot.is_closed:
+       while not bot.is_closed:
             print("Current servers: ")
             for server in bot.servers:
                 print(server.name)
