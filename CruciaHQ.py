@@ -216,19 +216,19 @@ try: #error handling
         # AU MANUAL TIME CONVERSION
         #
             if inttime < 13 and inttime > 2:
-                autime = inttime - 2
-                finaltime = str(autime) + minutes + "pm AEST"
+                    autime = inttime - 2
+                    finaltime = str(autime) + minutes + "pm AEST"
             elif inttime > 14 and inttime < 24:
-                autime = inttime - 14
-                finaltime = str(autime) + minutes + "am AEST"
+                    autime = inttime - 14
+                    finaltime = str(autime) + minutes + "am AEST"
             elif inttime == 14:
-                autime = "12"
-                finaltime = autime + minutes + "am AEST"
+                    autime = "12"
+                    finaltime = autime + minutes + "am AEST"
             elif inttime == 1 or inttime == 0:
-                autime = inttime + 10
-                finaltime = str(autime) + minutes + "am AEST"
+                    autime = inttime + 10
+                    finaltime = str(autime) + minutes + "am AEST"
             else:                                                           
-                finaltime == "12" + minutes + "am AEST"
+                    finaltime == "12" + minutes + "am AEST"
 
     #
     # US MANUAL TIME CONVERSION
