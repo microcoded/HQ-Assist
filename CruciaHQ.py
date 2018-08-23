@@ -339,5 +339,5 @@ try: #error handling
 
     bot.run("NDczMDI4MDAyNjI0NTY5MzQ0.Dj861A.qZGjZinhZOwo4xfnNHH4B1iiFyI")
 
-    except:
-        pass
+except:
+    pass
