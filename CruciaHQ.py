@@ -69,7 +69,7 @@ try: #error handling
         if regionstart[0] == "A":
             region = "AU :flag_au:"
         elif regionstart[0] =="$":
-            region = "US :earth_africa:"
+            region = "US/Global :flag_us:"
         elif regionstart[0] == "€":
             region = "DE :flag_de:"
         else:
