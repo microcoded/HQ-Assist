@@ -338,9 +338,9 @@ try: #error handling
 
         embed = discord.Embed(title="HQ Schedule", description="Next Show Times:", color=0x7647a2)
         embed.add_field(name="HQ AU :flag_au:", value="{}, {}, Prize: {}".format(title, finaltime, prize), inline=False)
-        embed.add_field(name="HQ US :flag_us:", value="{}, Prize: {}".format(ustitle, usfinaltime, usprize), inline=False)
-        embed.add_field(name="HQ DE :flag_de:", value="{}, Prize: {}".format(detitle, definaltime, deprize), inline=False)
-        embed.add_field(name="HQ UK :flag_gb:", value="{}, Prize: {}".format(uktitle, ukfinaltime, ukprize), inline=False)
+        embed.add_field(name="HQ US :flag_us:", value="{}, {}, Prize: {}".format(ustitle, usfinaltime, usprize), inline=False)
+        embed.add_field(name="HQ DE :flag_de:", value="{}, {}, Prize: {}".format(detitle, definaltime, deprize), inline=False)
+        embed.add_field(name="HQ UK :flag_gb:", value="{}, {}, Prize: {}".format(uktitle, ukfinaltime, ukprize), inline=False)
         await bot.say(embed=embed)
 
     bot.loop.create_task(list_servers())
