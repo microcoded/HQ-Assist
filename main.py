@@ -199,11 +199,13 @@ try: #error handling
         livecheck = str(data["active"])
         print(livecheck)
         prize = data["nextShowPrize"]
+        title = data["upcoming"][0]["nextShowLabel"]["title"]
         if str(livecheck) == "True":
             finaltime = "**Live Now :movie_camera:**"
         else:
             time = data["nextShowTime"]
             prize = data["nextShowPrize"]
+            title = data["upcoming"][0]["nextShowLabel"]["title"]
             showtime = datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S.%fZ')
             # you gotta somehow reformat the time above to the one below - gtg
             # showtime = str(datetime.datetime.strptime(time, '%I:%M %p'))
@@ -237,11 +239,13 @@ try: #error handling
         usdata = ussearch.json()
         uslivecheck = usdata["active"]
         usprize = usdata["nextShowPrize"]
+        ustitle = usdata["upcoming"][0]["nextShowLabel"]["title"]
         if str(uslivecheck) == "True":
             usfinaltime = "**Live Now :movie_camera:**"
         else:
             usustime = usdata["nextShowTime"]
             usprize = usdata["nextShowPrize"]
+            ustitle = usdata["upcoming"][0]["nextShowLabel"]["title"]
             usshowtime = datetime.datetime.strptime(usustime, '%Y-%m-%dT%H:%M:%S.%fZ')
             usshowlist = list(str(usshowtime))
             ustime = "".join(usshowlist[11:13])
@@ -269,11 +273,13 @@ try: #error handling
         dedata = desearch.json()
         delivecheck = dedata["active"]
         deprize = dedata["nextShowPrize"]
+        detitle = dedata["upcoming"][0]["nextShowLabel"]["title"]
         if str(delivecheck) == "True":
             definaltime = "**Live Now :movie_camera:**"
         else:
             deustime = dedata["nextShowTime"]
             deprize = dedata["nextShowPrize"]
+            detitle = dedata["upcoming"][0]["nextShowLabel"]["title"]
             deshowtime = datetime.datetime.strptime(deustime, '%Y-%m-%dT%H:%M:%S.%fZ')
             deshowlist = list(str(deshowtime))
             detime = "".join(deshowlist[11:13])
@@ -301,11 +307,13 @@ try: #error handling
         ukdata = uksearch.json()
         uklivecheck = ukdata["active"]
         ukprize = ukdata["nextShowPrize"]
+        uktitle = ukdata["upcoming"][0]["nextShowLabel"]["title"]
         if str(uklivecheck) == "True":
             ukfinaltime = "**Live Now :movie_camera:**"
         else:
             ukustime = ukdata["nextShowTime"]
             ukprize = ukdata["nextShowPrize"]
+            uktitle = ukdata["upcoming"][0]["nextShowLabel"]["title"]
             ukshowtime = datetime.datetime.strptime(ukustime, '%Y-%m-%dT%H:%M:%S.%fZ')
             ukshowlist = list(str(ukshowtime))
             uktime = "".join(ukshowlist[11:13])
@@ -329,10 +337,10 @@ try: #error handling
 
 
         embed = discord.Embed(title="HQ Schedule", description="Next Show Times:", color=0x7647a2)
-        embed.add_field(name="HQ AU :flag_au:", value="{}, Prize: {}".format(finaltime, prize), inline=False)
-        embed.add_field(name="HQ US :flag_us:", value="{}, Prize: {}".format(usfinaltime, usprize), inline=False)
-        embed.add_field(name="HQ DE :flag_de:", value="{}, Prize: {}".format(definaltime, deprize), inline=False)
-        embed.add_field(name="HQ UK :flag_gb:", value="{}, Prize: {}".format(ukfinaltime, ukprize), inline=False)
+        embed.add_field(name="HQ AU :flag_au:", value="{}, {}, Prize: {}".format(title, finaltime, prize), inline=False)
+        embed.add_field(name="HQ US :flag_us:", value="{}, Prize: {}".format(ustitle, usfinaltime, usprize), inline=False)
+        embed.add_field(name="HQ DE :flag_de:", value="{}, Prize: {}".format(detitle, definaltime, deprize), inline=False)
+        embed.add_field(name="HQ UK :flag_gb:", value="{}, Prize: {}".format(uktitle, ukfinaltime, ukprize), inline=False)
         await bot.say(embed=embed)
 
     bot.loop.create_task(list_servers())
