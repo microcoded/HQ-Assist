@@ -188,7 +188,7 @@ try: #error handling
         embed.add_field(name="Bot's ID:", value="449822055634829313", inline=True)
         embed.add_field(name="Servers:", value="{}".format(len(bot.servers)), inline=True)
         embed.add_field(name="Developer:", value="Cruciate#9243", inline=True)
-        embed.add_field(name="Development Assistance:", value="Jacob#4235 & Jsonmarley#9752", inline=True)
+        embed.add_field(name="Development Assistance:", value="Jacob#2961 & Jsonmarley#9752", inline=True)
         embed.set_thumbnail(url='https://i.imgur.com/D0tzEkz.png')
         await bot.say(embed=embed)
 
