@@ -22,7 +22,6 @@ try: #error handling
 
 
 
-
     async def list_servers():
      await bot.wait_until_ready()
      while not bot.is_closed:
@@ -31,6 +30,9 @@ try: #error handling
                 print(server.name)
             await asyncio.sleep(1200)
 
+            if (message.channel instanceof Discord.DMChannel) # If message is DM
+            else # Don't do anything
+            
     @bot.command(pass_context=True)
     async def info(ctx, username):
         headers = {'Authorization':'Bearer [insert_au_bearer]'}
