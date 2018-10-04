@@ -29,9 +29,6 @@ try: #error handling
             for server in bot.servers:
                 print(server.name)
             await asyncio.sleep(1200)
-
-            if (message.channel instanceof Discord.DMChannel) # If message is DM
-            else # Don't do anything
             
     @bot.command(pass_context=True)
     async def info(ctx, username):
