@@ -32,7 +32,6 @@ try: #error handling
             
     @bot.command(pass_context=True)
     async def info(ctx, username):
-        headers = {'Authorization':'Bearer [insert_au_bearer]'}
         search = requests.get('https://api-quiz.hype.space/users?q=' + username, headers = headers)
         searchdata = search.json()
         user = searchdata["data"][0]["userId"]
@@ -187,7 +186,7 @@ try: #error handling
         embed.add_field(name="Bot's ID:", value="449822055634829313", inline=True)
         embed.add_field(name="Servers:", value="{}".format(len(bot.servers)), inline=True)
         embed.add_field(name="Developer:", value="Cruciate#9243", inline=True)
-        embed.add_field(name="Development Assistance:", value="Jacob#2961 & Jsonmarley#9752", inline=True)
+        embed.add_field(name="Development Assistance:", value="Jacob.#4742 & Jsonmarley#9752", inline=True)
         embed.set_thumbnail(url='https://i.imgur.com/D0tzEkz.png')
         await bot.say(embed=embed)
 
@@ -206,9 +205,6 @@ try: #error handling
             prize = data["nextShowPrize"]
             title = data["upcoming"][0]["nextShowLabel"]["title"]
             showtime = datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S.%fZ')
-            # you gotta somehow reformat the time above to the one below - gtg
-            # showtime = str(datetime.datetime.strptime(time, '%I:%M %p'))
-            #back to math we go then?
             showlist = list(str(showtime))
             time = "".join(showlist[11:13])
             minutes = "".join(showlist[13:16])
@@ -344,7 +340,7 @@ try: #error handling
 
     bot.loop.create_task(list_servers())
 
-    bot.run("NDczMDI4MDAyNjI0NTY5MzQ0.Dj861A.qZGjZinhZOwo4xfnNHH4B1iiFyI")
+    bot.run("[insert discord bot token]")
 
 except:
-    pass
+    pass # this stuff here is to loop program if an error occurs, preventing crashing and providing 100% uptime.
