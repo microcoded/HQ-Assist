@@ -1,5 +1,5 @@
 # HQ Assist
-HQ Assist is a HQ Trivia Discord bot that connects to the HQ servers and provides information on user and game data for all regions. Because it is from 2018, it is now outdated.
+HQ Assist is a HQ Trivia Discord bot that connects to the HQ servers and provides information on user and game data for all regions. Because it is from 2018, it is now outdated. Uses discord.py for connection to Discord.
 
 ## General Notes
 * As this bot is from 2018, there are a few issues with compatability.
