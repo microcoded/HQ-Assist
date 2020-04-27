@@ -11,6 +11,6 @@ HQ Assist is a HQ Trivia Discord bot that connects to the HQ servers and provide
 
 ![HQ Assist Icon](https://i.imgur.com/D0tzEkz.png)
 
-# Contact
-The current maintainer of the code is contactable on Discord: Jacob.#4742
-Cruciate#9243 is also responsible for a significant amount of the development.
+### Contact
+The current maintainer of the code is contactable on Discord: _@Jacob.#4742_  
+Originally created by, _@Cruciate#9243_, who is also responsible for a significant amount of the development.
